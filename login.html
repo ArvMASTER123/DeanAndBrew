@@ -8,16 +8,18 @@
 </head>
 <body>
             <div class="header">
-                <h1>Bean & Brew</h1>
+                <h1 class="text">Dean & Brew</h1>
                 <p>Log In </p>
             </div>
     <form action="/login" method="POST">
-        <p>Enter Username:</p>
+        <p><strong>Enter Username:</strong></p>
         <p><input type="text" name="username" /></p>
-        <p>Enter Password:</p>
+        <p><strong>Enter Password:</strong></p>
         <p><input type="password" name="password" /></p>
 
         <p><input type="submit" value="Submit" /></p>
+
+        <p style="color: red;">{{ error_message }}</p>
 
         <button><a href="{{url_for('register')}}">Register</a></button>
     </form>
