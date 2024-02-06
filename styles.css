@@ -25,6 +25,26 @@ body{
 margin: 0px;
 }
 
+/* styles.css */
+
+/* Add a white box around the buttons */
+button {
+    background-color: white;
+    border: 2px solid black; /* Add a black border around the button */
+    padding: 10px 20px; /* Add padding to the button */
+    border-radius: 5px; /* Add rounded corners to the button */
+    text-decoration: none; /* Remove underline from anchor tags inside buttons */
+}
+
+/* Change the text color of the anchor tags inside buttons */
+button a {
+    color: black;
+}
+
+/* Add some spacing between the buttons */
+button + button {
+    margin-top: 10px;
+}
 
 
 <style>
