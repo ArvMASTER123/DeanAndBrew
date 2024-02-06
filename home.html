@@ -1,28 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='styles.css') }}"
-    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='coffeeweb.png') }}");
+            background-size: 100% 100%; /* Cover the entire body with the background image */
+            background-position: center; /* Center the background image */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        .header {
+            /* Add styles for header if necessary */
+        }
+
+        .logo {
+            /* Add styles for logo if necessary */
+        }
+
+        .text {
+            /* Add styles for text if necessary */
+        }
+
+        /* Add styles for buttons if necessary */
+    </style>
 </head>
 <body>
-            <div class="header">
-                <div class="logo">
-                    <img src="{{ url_for('static', filename='logo.png') }}" alt="Bean & Brew Logo">
-                </div>
-               <div class = "text">
-                 <h3>Dean & Brew Coffee Shop - By Arvin Rangbar</h3> <br>
-               </div>
+    <div class="header">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Bean & Brew Logo">
+        </div>
+        <div class="text">
+            <h3>Dean & Brew Coffee Shop - By Arvin Rangbar</h3> <br>
+        </div>
+    </div>
+    <br>
 
-            </div>
-         <br>
+    <!-- Add content here -->
 
-         <button><a href="{{url_for('welcome')}}">Order As a Guest</a></button> <br> <br>
-            <button><a href="{{url_for('login')}}">Login</a></button> <br> <br>
-        <button><a href="{{url_for('register')}}">Create an account to buy</a></button> <br> <br>
-        <button><a href="{{url_for('register')}}">Restaurant space booking</a></button> <br><br>
-        <button><a href="{{url_for('register')}}">Book baking lessons</a></button> <br>
+    <button><a href="{{url_for('welcome')}}">Order As a Guest</a></button> <br> <br>
+    <button><a href="{{url_for('login')}}">Login</a></button> <br> <br>
+    <button><a href="{{url_for('register')}}">Create an account to buy</a></button> <br> <br>
+    <button><a href="{{url_for('register')}}">Restaurant space booking</a></button> <br><br>
+    <button><a href="{{url_for('register')}}">Book baking lessons</a></button> <br>
 
 </body>
 </html>
