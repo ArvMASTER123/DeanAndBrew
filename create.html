@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload new File</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('coffeeupload.png'); /* Specify the path to your background image */
+            background-size: cover; /* Cover the entire body with the background image */
+            background-position: center; /* Center the background image */
+            text-align: center;
+        }
+        form {
+            margin-top: 50px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload new File</h1>
+    <form method="post" enctype="multipart/form-data">
+        <label for="food_name">Food Name</label>
+        <input type="text" name="food_name" required><br><br>
+
+        <label for="food_type">Food Type</label>
+        <input type="text" name="food_type" required><br><br>
+
+        <label for="food_price">Food Price</label>
+        <input type="text" name="food_price" required><br><br>
+
+        <input type="file" name="file1"><br><br>
+
+        <input type="submit" value="Submit">
+
+        <button><a href="{{url_for('welcome')}}">Menu</a></button>
+        <button><a href="{{url_for('option')}}">Home</a></button>
+    </form>
+</body>
+</html>
