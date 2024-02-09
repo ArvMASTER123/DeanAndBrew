@@ -1,26 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='styles.css') }}"
-    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Set a font for the body */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("{{ url_for('static', filename='coffeeweb.png') }}"); /* Set the background image */
+            background-size: cover; /* Cover the entire body with the background image */
+            background-position: center; /* Center the background image */
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Add opacity to the login container background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px; /* Add margin bottom for spacing */
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-            <div class="header">
-                <h1 class="text">Dean & Brew</h1>
-                <p>Log In </p>
-            </div>
-    <form action="/login" method="POST">
-        <p><strong>Enter Username:</strong></p>
-        <p><input type="text" name="username" /></p>
-        <p><strong>Enter Password:</strong></p>
-        <p><input type="password" name="password" /></p>
+    <div class="login-container">
+        <div class="header">
+            <h1 class="text">Dean & Brew</h1>
+        </div>
+        <form action="/login" method="POST">
+            <p><strong>Enter Username:</strong></p>
+            <p><input type="text" name="username" /></p>
+            <p><strong>Enter Password:</strong></p>
+            <p><input type="password" name="password" /></p>
 
-        <p><input type="submit" value="Submit" /></p>
+            <p><input type="submit" value="Submit" /></p>
 
-        <button><a href="{{url_for('register')}}">Register</a></button>
-        <button><a href="{{url_for('option')}}">Home</a></button>
-    </form>
+            <button><a href="{{url_for('register')}}">Register</a></button>
+            <button><a href="{{url_for('option')}}">Home</a></button>
+        </form>
+    </div>
 </body>
-</html>
+</html></html>
