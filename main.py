@@ -93,11 +93,15 @@ def register():
 @app.route('/create/', methods=('GET', 'POST'))
 def create():
     if request.method == 'POST':
-        food_id = int(request.form['food_id'])
         food_name = request.form['food_name']
         food_price = float(request.form['food_price'])
-        # food_image = request.form['food_image']
         food_type = request.form['food_type']
+        if 'file1' not in request.files:
+            return 'there is no file1 in form!'
+        file1 = request.files['file1']
+        path = os.path.join(app.config['UPLOAD_FOLDER'], file1.filename)
+
+        file1.save(path)
         new_food = Food(food_id=food_id, food_name=food_name, food_price=food_price, food_type=food_type)
         db.session.add(new_food)
         db.session.commit()
@@ -109,7 +113,7 @@ def welcome():
     food = db.session.query(Food).all()
     # food = db.session.query(Food).first()
     return render_template('welcome.html', food=food)
-    #return render_template('welcom.html')
+    #return render_template('welcome.html')
 
 @app.route('/menu', methods=['GET', 'POST'])
 def menu():
@@ -245,4 +249,3 @@ if __name__ == "__main__":
     with app.app_context():
         db.create_all()
     app.run(debug=True)
-
