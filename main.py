@@ -34,7 +34,7 @@ app = Flask(__name__)
 login_manager = LoginManager(app)
 bcrypt = Bcrypt(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:\\Users\\737215\\Databases\\Coffee.db'
 app.config['SECRET_KEY'] = 'this is a secret key '
 
 db.init_app(app)
